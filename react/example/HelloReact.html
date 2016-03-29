@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    
+    <style type="text/css">
+    body {
+      padding: 20px
+    }
+    </style>
+  </head>
+  <body>
+    
+
+    <div id="example">
+        <!-- This element's contents will be replaced with your component. -->
+    </div>
+    <script type="text/babel">
+    var HelloWorld = React.createClass({
+      render : function(){
+        return (
+          <p>
+          Hello, <input type = "text" placeholder = "Your name Here"/>!
+          It is {this.props.date.toTimeString()}
+          </p>
+        );
+      }
+    });
+
+    setInterval(function(){
+      ReactDOM.render(
+        <HelloWorld date={new Date()} />,
+        document.getElementById('example')
+      );
+    }, 500);
+
+    </script>
+  </body>
+</html>
